@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{fragments/head.html :: head}"></head>
+
+<body>
+<div class = "text-center m-5">
+  <h1 class = "text-success">Login Successful</h1>
+  <h4>Welcome, <span th:text="${welcomeName}"></span></h4>
+  <p>you have successfully logged in!</p>
+  <a th:href="@{/}" class="btn btn-info m-3">Home Page</a>
+  <a th:href="@{/reset-password}" class="btn btn-primary m-3">change your password?</a>
+  <a th:href="@{/logout}" class="btn btn-primary m-3">log out?</a>
+
+
+</div>
+</body>
+</html>

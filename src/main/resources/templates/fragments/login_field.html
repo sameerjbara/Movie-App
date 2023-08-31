@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col">
+    <label for="email" class="form-label">Email:</label>
+    <p class="text-danger" th:if="${errorMessages}">
+      <span th:if="${errorMessages['email']}" th:text="${errorMessages['email']}"></span>
+    </p>
+    <input class="mx-3 form-control" type="text" id="email" name="email">
+  </div>
+</div>

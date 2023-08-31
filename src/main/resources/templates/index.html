@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{fragments/head.html :: head}"></head>
+
+<body>
+
+<div class = "text-center border border-warning rounded m-5">
+    <h1 th:text="${greeting}" class = "my-5"></h1>
+    <h3 class = "my-5">If you already have an account, try to log-in. A new member? Register NOW!</h3>
+    <a th:href="@{/register}" class="btn btn-info m-5">Register</a>
+    <a th:href="@{/login}" class="btn btn-primary m-5">login</a>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3phWRVoV4oF7b2kKSG+Ph5+X6jtgfY6lY9J6Bq0inFv6k7/00J27Xj" crossorigin="anonymous"></script>
+
+</body>
+</html>

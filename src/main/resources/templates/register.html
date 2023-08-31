@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{fragments/head.html :: head}"></head>
+
+<body>
+
+<div class="row text-center border border-info rounded my-3 mx-5">
+  <div class="col-11">
+    <h3>User Registration</h3>
+
+    <p th:if="${registerSuccessful}" th:text="${registerSuccessful}" class="text-success my-2"></p>
+
+    <form th:action="@{/register}" method="post" autocomplete="off">
+      <div th:insert="~{fragments/login_field.html :: div}"> </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="username" class="form-label">Username:</label>
+          <p class="text-danger" th:if="${errorMessages}">
+            <span th:if="${errorMessages['username']}" th:text="${errorMessages['username']}"></span>
+          </p>
+          <input class="mx-3 form-control" type="text" id="username" name="username" >
+        </div>
+      </div>
+
+      <div th:insert="~{fragments/password_fields.html :: div}"> </div>
+
+      <h5 class="my-1">Choose two questions and answer them, in case you forgot your password(remember the exact answers).</h5>
+
+      <div th:insert="~{fragments/questions_answers_fields.html :: div}"> </div>
+
+      <button class="my-1" type="submit">Register</button>
+    </form>
+  </div>
+</div>
+
+<div class="row text-center">
+  <div class="col-11">
+    <p>already have an account?</p>
+    <a th:href="@{/login}">Login</a>
+    <br>
+    <a th:href="@{/}">Home Page</a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{fragments/head.html :: head}"></head>
+
+<body>
+
+<div class="text-center border border-danger rounded m-5">
+  <h1>Error</h1>
+  <p>An error occurred.</p>
+  <p th:if="${errorMessage}" th:text="${errorMessage}" class="text-danger my-2"></p>
+  <a th:href="@{/}" >Go back to home page</a>
+</div>
+
+</body>
+</html>

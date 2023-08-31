@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col">
+    <label for="firstQuestion" class="form-label">First Security Question:</label>
+    <p class="text-danger" th:if="${errorMessages}">
+      <span  th:if="${errorMessages['firstQuestion']}" th:text="${errorMessages['firstQuestion']}"></span>
+    </p>
+    <select class="mx-3 form-control" id="firstQuestion" name="firstQuestion">
+      <option value="">Choose Question</option>
+      <option th:each="question : ${questions}" th:value="${question.question}" th:text="${question.question}"></option>
+    </select>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col">
+    <label for="firstAnswer" class="form-label">First Answer:</label>
+    <p class="text-danger" th:if="${errorMessages}">
+      <span th:if="${errorMessages['firstAnswer']}" th:text="${errorMessages['firstAnswer']}"></span>
+    </p>
+    <input class="mx-3 my-1 form-control" type="text" id="firstAnswer" name="firstAnswer">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <label for="secondQuestion" class="form-label">Second Security Question:</label>
+    <p class="text-danger" th:if="${errorMessages}">
+      <span  th:if="${errorMessages['secondQuestion']}" th:text="${errorMessages['secondQuestion']}"></span>
+    </p>
+    <select class="mx-3 form-control" id="secondQuestion" name="secondQuestion">
+      <option value="">Choose Question</option>
+      <option th:each="question : ${questions}" th:value="${question.question}" th:text="${question.question}"></option>
+    </select>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col">
+    <label for="secondAnswer" class="form-label">Second Answer:</label>
+    <p class="text-danger" th:if="${errorMessages}">
+      <span th:if="${errorMessages['secondAnswer']}" th:text="${errorMessages['secondAnswer']}"></span>
+    </p>
+    <input class="mx-3 my-1 form-control" type="text" id="secondAnswer" name="secondAnswer">
+  </div>
+</div>

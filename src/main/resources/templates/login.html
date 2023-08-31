@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{fragments/head.html :: head}"></head>
+
+<body>
+
+
+<div class="row text-center border border-primary rounded m-5">
+  <div class="col-11">
+  <h1>Login</h1>
+
+    <form th:action="@{/login}" method="post" autocomplete="off">
+
+      <p th:if="${successMessage}" th:text="${successMessage}" class="text-success my-2"></p>
+
+      <p th:if="${errorMessage}" th:text="${errorMessage}" class="text-danger my-2"></p>
+
+      <div class="row">
+        <div class="col">
+          <label for="email" class="form-label">Email:</label>
+          <input class="mx-3 form-control" type="text" id="email" name="email">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="password" class="form-label">Password:</label>
+          <input class="mx-3 form-control" type="password" id="password" name="password">
+        </div>
+      </div>
+
+      <button class="my-1" type="submit">Login</button> <br>
+      <a th:href="@{/forgot-password}">forgot-password</a>
+    </form>
+  </div>
+</div>
+
+<div class="row text-center">
+  <div class="col-11">
+    <p>Don't have an account yet?</p>
+    <a th:href="@{/register}">Register</a>
+    <br>
+    <a th:href="@{/}">Home Page</a>
+  </div>
+</div>
+
+</body>
+</html>
